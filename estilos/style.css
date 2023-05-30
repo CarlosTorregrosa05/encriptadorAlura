@@ -5,14 +5,14 @@
 
 body {
     height: fit-content;
-    background: url(/git-y-github/encriptadorAluraG05/imagenes/cool-background.png);
-    background-size: cover;
+    background-image: linear-gradient(to bottom, #e9ecf8, #dde1f2, #d1d6eb, #c5cbe5, #b9c0de, #afb7d8, #a6aed2, #9ca5cc, #929bc6, #8892bf, #7f88b9, #757fb2);
     background-attachment: fixed;
+    height: 100vh;
 }
 
 header {
     width: 100%;
-    height: 7rem;
+    height: 6rem;
     position: relative;
 }
 
@@ -33,18 +33,18 @@ main {
     gap: 20px
 }
 
-textarea {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(9.2px);
-    -webkit-backdrop-filter: blur(9.2px);
-    border: none;
-}
-
 .mensaje {
     width: 60%;
     padding: 30px;
+}
+
+textarea, textarea:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(92px);
+    -webkit-backdrop-filter: blur(9.2px);
+    border: none;
 }
 
 .mensaje>textarea {
@@ -52,23 +52,153 @@ textarea {
     height: 30rem;
     padding: 30px 25px;
     font-size: 2rem;
-    color: #757FB2;
+    color: #072B61;
     background-color: transparent;
 }
+
+.mensaje>textarea::placeholder {
+    color: #757FB2;
+}
+
+.mensaje>textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.mensaje p{
+    font-size: 1.3rem;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.mensaje .botones{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boton{
+    padding: 10px;
+    width: min(45%, 250px);
+    font-size: 1.5rem;
+    border-radius: 20px;
+    border: none;
+}
+
+.boton.encriptar{
+    background: #0A3871;
+    color: white;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.6);
+}
+
+.boton.desencriptar, .boton.copiar{
+    background: #EFF1FA;
+    color: #052051;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.6);
+}
+
 
 .encriptado {
     width: 40%;
     padding: 10px;
 }
 
-.encriptado>textarea {
-    width: 100%;
-    height: 32.4rem;
-    padding: 30px 20px;
-    font-size: 2rem;
-    color: #757FB2;
+.encriptado .boton{
+    position: relative;
+    bottom: 80px;
+    left: 30%;
 }
 
-textarea:disabled {
-    background-color: transparent;
+.encriptado>textarea {
+    width: 100%;
+    height: 37rem;
+    padding: 30px 20px;
+    font-size: 2rem;
+    color: #333c69;
+}
+
+.mensaje-encriptado{
+    background-image: url(../imagenes/texto_no_encontrado.png);
+    background-repeat: no-repeat;
+}
+/* efectos visuales con hover */
+
+.boton.encriptar:hover, .boton.desencriptar:hover, .boton.copiar:hover{
+    background: rgba(5, 32, 81, 0.507);
+    color: white;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+
+/* efectos visuales con active */
+.boton.encriptar:active, .boton.desencriptar:active, .boton.copiar:active{
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.6), 4px 4px 5px rgba(0,0,0, 0.6);
+    transition: 0.3s all;
+}
+
+@media(width <= 900px){
+    main{
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+    }
+    .mensaje, .encriptado {
+        width: 100%;
+        height: 50vh;
+    }
+    .encriptado{
+        height: 30vh;
+    }
+
+    .mensaje > textarea, .encriptado > textarea{
+        height: 80%;
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .encriptado > textarea{
+        height: 100%;
+    }
+
+    .boton.copiar{
+        left: calc(100%/3.5);
+    }
+
+    .encriptado .mensaje-encriptado{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media(width <= 450px){
+    .mensaje, .encriptado{
+        padding: 0.5rem;
+    }
+
+    .botones{
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botones .boton{
+        width: 90%;
+    }
+
+    .mensaje > textarea, .encriptado > textarea{
+        height: 60%;
+        width: 100%;
+    }
+
+    .encriptado > textarea{
+        height: 100%;
+        margin: 0px;
+    }
+
+    .boton.copiar{
+        left: calc(100%/3.5);
+    }
+
 }

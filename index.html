@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +11,31 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
     <header>
         <img src="./imagenes/Logo.png" alt="logo alura">
     </header>
     <main>
         <section class="mensaje">
-            <textarea class="mensaje-encriptar" name="msj" id="" cols="40" rows="20" placeholder="ingrese el texto aqui"></textarea>
+            <textarea class="mensaje-encriptar" name="msj" id="" cols="40" rows="20"
+                placeholder="ingrese el texto aqui"></textarea>
             <p><i class="fa fa-exclamation-circle"></i> Solo letras minúsculas y sin acentos</p>
-            <button class="boton encriptar">Encriptar</button>
-            <button class="boton desencriptar">Desencriptar</button>
+            <div class="botones">
+                <button class="boton encriptar" onclick="btnEncriptar()">Encriptar</button>
+                <button class="boton desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+            </div>
         </section>
 
         <section class="encriptado">
-            <textarea class="mensaje-encriptado" name="msj2" id="" cols="30" rows="10" disabled></textarea>
+            <textarea class="mensaje-encriptado" name="msj2" id="" cols="30" rows="10"></textarea>
+            <button class="boton copiar" onclick="copiar()">
+                Copiar
+            </button>
         </section>
     </main>
+
+    <script src="./codigo/script.js"></script>
 
 </body>
 
