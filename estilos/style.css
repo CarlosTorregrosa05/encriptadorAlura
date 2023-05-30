@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: fit-content;
+    background: url(/git-y-github/encriptadorAluraG05/imagenes/cool-background.png);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    width: 100%;
+    height: 7rem;
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 50px;
+}
+
+main {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 50px auto;
+    gap: 20px
+}
+
+textarea {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(9.2px);
+    -webkit-backdrop-filter: blur(9.2px);
+    border: none;
+}
+
+.mensaje {
+    width: 60%;
+    padding: 30px;
+}
+
+.mensaje>textarea {
+    width: 100%;
+    height: 30rem;
+    padding: 30px 25px;
+    font-size: 2rem;
+    color: #757FB2;
+    background-color: transparent;
+}
+
+.encriptado {
+    width: 40%;
+    padding: 10px;
+}
+
+.encriptado>textarea {
+    width: 100%;
+    height: 32.4rem;
+    padding: 30px 20px;
+    font-size: 2rem;
+    color: #757FB2;
+}
+
+textarea:disabled {
+    background-color: transparent;
+}

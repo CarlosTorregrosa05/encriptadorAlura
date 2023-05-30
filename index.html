@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Encriptador de Texto</title>
+
+    <link rel="stylesheet" href="./estilos/style.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    
+    <header>
+        <img src="./imagenes/Logo.png" alt="logo alura">
+    </header>
+    <main>
+        <section class="mensaje">
+            <textarea class="mensaje-encriptar" name="msj" id="" cols="40" rows="20" placeholder="ingrese el texto aqui"></textarea>
+            <p><i class="fa fa-exclamation-circle"></i> Solo letras minúsculas y sin acentos</p>
+            <button class="boton encriptar">Encriptar</button>
+            <button class="boton desencriptar">Desencriptar</button>
+        </section>
+
+        <section class="encriptado">
+            <textarea class="mensaje-encriptado" name="msj2" id="" cols="30" rows="10" disabled></textarea>
+        </section>
+    </main>
+
 </body>
+
+
 </html>
